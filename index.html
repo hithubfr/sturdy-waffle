@@ -41,20 +41,47 @@
 
   <!-- Preload critical CSS for better performance -->
   <link rel="preload" href="./styles.css" as="style" />
-  <link rel="preload" href="./fontawesome/css/fontawesome.min.css" as="style" />
-  <link rel="preload" href="./fontawesome/css/brands.min.css" as="style" />
-  <link rel="preload" href="./fontawesome/css/solid.min.css" as="style" />
 
   <link rel="stylesheet" href="./styles.css" />
-  <!-- FontAwesome CSS (minified) - more efficient than JS -->
-  <link rel="stylesheet" href="./fontawesome/css/fontawesome.min.css" />
-  <link rel="stylesheet" href="./fontawesome/css/brands.min.css" />
-  <link rel="stylesheet" href="./fontawesome/css/solid.min.css" />
 </head>
 <body>
+  <!-- Hidden SVG sprite for inline icons - replaces 29MB FontAwesome library with ~5KB -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="icon-medium" viewBox="0 0 640 512">
+      <path d="M180.5,74.262C80.813,74.262,0,155.633,0,256S80.819,437.738,180.5,437.738,361,356.373,361,256,280.191,74.262,180.5,74.262Zm288.25,10.646c-49.845,0-90.245,76.619-90.245,171.095s40.406,171.1,90.251,171.1,90.251-76.619,90.251-171.1H559C559,161.5,518.6,84.908,468.752,84.908Zm139.506,17.821c-17.526,0-31.735,68.628-31.735,153.274s14.2,153.274,31.735,153.274S640,340.631,640,256C640,171.351,625.785,102.729,608.258,102.729Z"/>
+    </symbol>
+    <symbol id="icon-github" viewBox="0 0 496 512">
+      <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>
+    </symbol>
+    <symbol id="icon-twitter" viewBox="0 0 512 512">
+      <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/>
+    </symbol>
+    <symbol id="icon-linkedin" viewBox="0 0 448 512">
+      <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/>
+    </symbol>
+    <symbol id="icon-instagram" viewBox="0 0 448 512">
+      <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+    </symbol>
+    <symbol id="icon-envelope" viewBox="0 0 512 512">
+      <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/>
+    </symbol>
+    <symbol id="icon-rss" viewBox="0 0 448 512">
+      <path d="M0 64C0 46.3 14.3 32 32 32c229.8 0 416 186.2 416 416c0 17.7-14.3 32-32 32s-32-14.3-32-32C384 253.6 226.4 96 32 96C14.3 96 0 81.7 0 64zM0 416a64 64 0 1 1 128 0A64 64 0 1 1 0 416zM32 160c159.1 0 288 128.9 288 288c0 17.7-14.3 32-32 32s-32-14.3-32-32c0-123.7-100.3-224-224-224c-17.7 0-32-14.3-32-32s14.3-32 32-32z"/>
+    </symbol>
+    <symbol id="icon-swift" viewBox="0 0 448 512">
+      <path d="M448 156.09c0-4.51-.08-9-.2-13.52a196.31 196.31 0 0 0-2.58-29.42 99.62 99.62 0 0 0-9.22-28A94.08 94.08 0 0 0 394.84 44a99.17 99.17 0 0 0-28-9.22 195 195 0 0 0-29.43-2.59c-4.51-.12-9-.17-13.52-.2H124.14c-4.51 0-9 .08-13.52.2-2.45.07-4.91.15-7.37.27a171.68 171.68 0 0 0-22.06 2.32 103.06 103.06 0 0 0-21.21 6.1q-3.46 1.45-6.81 3.12a94.66 94.66 0 0 0-18.39 12.32c-1.88 1.61-3.69 3.28-5.43 5A93.86 93.86 0 0 0 12 85.17a99.45 99.45 0 0 0-9.22 28 196.31 196.31 0 0 0-2.54 29.4c-.13 4.51-.18 9-.21 13.52v199.83c0 4.51.08 9 .21 13.51a196.08 196.08 0 0 0 2.58 29.42 99.3 99.3 0 0 0 9.22 28A94.31 94.31 0 0 0 53.17 468a99.47 99.47 0 0 0 28 9.21 195 195 0 0 0 29.43 2.59c4.5.12 9 .17 13.52.2H323.91c4.51 0 9-.08 13.52-.2a196.59 196.59 0 0 0 29.44-2.59 99.57 99.57 0 0 0 28-9.21A94.22 94.22 0 0 0 436 426.84a99.3 99.3 0 0 0 9.22-28 194.79 194.79 0 0 0 2.59-29.42c.12-4.5.17-9 .2-13.51V172.14c-.01-5.35-.01-10.7-.01-16.05zm-69.88 241c-20-38.93-57.23-29.27-76.31-19.47-1.72 1-3.48 2-5.25 3l-.42.25c-39.5 21-92.53 22.54-145.85-.38A234.64 234.64 0 0 1 45 290.12a230.63 230.63 0 0 0 39.17 23.37c56.36 26.4 113 24.49 153 0-57-43.85-104.6-101-141.09-147.22a197.09 197.09 0 0 1-18.78-25.9c43.7 40 112.7 90.22 137.48 104.12-52.57-55.49-98.89-123.94-96.72-121.74 82.79 83.42 159.18 130.59 159.18 130.59 2.88 1.58 5 2.85 6.73 4a127.44 127.44 0 0 0 4.16-12.47c13.22-48.33-1.66-103.58-35.31-149.2C329.61 141.75 375 229.34 356.4 303.42c-.44 1.73-.95 3.4-1.44 5.09 38.52 47.4 28.04 98.17 23.13 88.59z"/>
+    </symbol>
+    <symbol id="icon-app-store-ios" viewBox="0 0 448 512">
+      <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM127 384.5c-5.5 9.6-17.8 12.8-27.3 7.3-9.6-5.5-12.8-17.8-7.3-27.3l14.3-24.7c16.1-4.9 29.3-1.1 39.6 11.4L127 384.5zm138.9-53.9H84c-11 0-20-9-20-20s9-20 20-20h51l65.4-113.2-20.5-35.4c-5.5-9.6-2.2-21.8 7.3-27.3 9.6-5.5 21.8-2.2 27.3 7.3l8.9 15.4 8.9-15.4c5.5-9.6 17.8-12.8 27.3-7.3 9.6 5.5 12.8 17.8 7.3 27.3l-85.8 148.6h62.1c20.2 0 31.5 23.7 22.7 40zm98.1 0h-29l19.6 33.9c5.5 9.6 2.2 21.8-7.3 27.3-9.6 5.5-21.8 2.2-27.3-7.3-32.9-56.9-57.5-99.7-74-128.1-16.7-29-4.8-58 7.1-67.8 13.1 22.7 32.7 56.7 58.9 102h52c11 0 20 9 20 20 0 11.1-9 20-20 20z"/>
+    </symbol>
+    <symbol id="icon-markdown" viewBox="0 0 640 512">
+      <path d="M593.8 59.1H46.2C20.7 59.1 0 79.8 0 105.2v301.5c0 25.5 20.7 46.2 46.2 46.2h547.7c25.5 0 46.2-20.7 46.1-46.1V105.2c0-25.4-20.7-46.1-46.2-46.1zM338.5 360.6H277v-120l-61.5 76.9-61.5-76.9v120H92.3V151.4h61.5l61.5 76.9 61.5-76.9h61.5v209.2zm135.3 3.1L381.5 256H443V151.4h61.5V256H566z"/>
+    </symbol>
+  </svg>
+
   <div class="container">
     <div class="profile">
-      <img src="./images/profile.jpeg" alt="Profile Picture" class="profile-pic" />
+      <img src="./images/profile.jpeg" alt="Profile Picture" class="profile-pic" loading="lazy" />
       <h1 class="name">@zhgchgli</h1>
       <p class="description">An iOS, web, and automation developer from Taiwan 🇹🇼 who also loves sharing, traveling, and writing.</p>
     </div>
@@ -63,37 +90,37 @@
       
         
         <a href="https://blog.zhgchg.li" target="_blank" class="link-button" alt="ZhgChgLi's Tech Blog" title="ZhgChgLi's Tech Blog">
-          <i class="fa-brands fa-medium"></i> Tech Blog <span class='link-button-text'>(1K Followers)</span>
+          <svg class="icon" aria-hidden="true"><use href="#icon-medium"></use></svg> Tech Blog <span class='link-button-text'>(1K Followers)</span>
         </a>
       
         
         <a href="https://medium.com/ztravel" target="_blank" class="link-button" alt="ZhgChgLi's Travelog" title="ZhgChgLi's Travelog">
-          <i class="fa-brands fa-medium"></i> Travelog <span class='link-button-text'>(1K Followers)</span>
+          <svg class="icon" aria-hidden="true"><use href="#icon-medium"></use></svg> Travelog <span class='link-button-text'>(1K Followers)</span>
         </a>
       
         
         <a href="https://zhgchg.li/" target="_blank" class="link-button" alt="ZhgChgLi's Website" title="ZhgChgLi's Website">
-          <i class="fa-solid fa-rss"></i> Website
+          <svg class="icon" aria-hidden="true"><use href="#icon-rss"></use></svg> Website
         </a>
       
         
         <a href="https://github.com/ZhgChgLi/ZMarkupParser" target="_blank" class="link-button" alt="ZMarkupParser is a pure-Swift library that helps you to convert HTML strings to NSAttributedString with customized style and tags." title="ZMarkupParser is a pure-Swift library that helps you to convert HTML strings to NSAttributedString with customized style and tags.">
-          <i class="fa-brands fa-swift"></i> ZMarkupParser <span class='link-button-text'>(358 Stars)</span>
+          <svg class="icon" aria-hidden="true"><use href="#icon-swift"></use></svg> ZMarkupParser <span class='link-button-text'>(358 Stars)</span>
         </a>
       
         
         <a href="https://github.com/ZhgChgLi/ZReviewTender" target="_blank" class="link-button" alt="ZReviewTender is a tool for fetching app reviews from the App Store and Google Play Console and integrating them into your workflow." title="ZReviewTender is a tool for fetching app reviews from the App Store and Google Play Console and integrating them into your workflow.">
-          <i class="fa-brands fa-app-store-ios"></i> ZReviewTender <span class='link-button-text'>(53 Stars)</span>
+          <svg class="icon" aria-hidden="true"><use href="#icon-app-store-ios"></use></svg> ZReviewTender <span class='link-button-text'>(53 Stars)</span>
         </a>
       
         
         <a href="https://github.com/ZhgChgLi/ZMediumToMarkdown" target="_blank" class="link-button" alt="ZMediumToMarkdown is a powerful tool that allows you to effortlessly download and convert your Medium posts to Markdown format." title="ZMediumToMarkdown is a powerful tool that allows you to effortlessly download and convert your Medium posts to Markdown format.">
-          <i class="fa-brands fa-markdown"></i> ZMediumToMarkdown <span class='link-button-text'>(49 Stars)</span>
+          <svg class="icon" aria-hidden="true"><use href="#icon-markdown"></use></svg> ZMediumToMarkdown <span class='link-button-text'>(49 Stars)</span>
         </a>
       
         
         <a href="https://github.com/ZhgChgLi/linkyee" target="_blank" class="link-button" alt="linkyee is a fully customized, open-source LinkTree alternative deployed directly on GitHub Pages." title="linkyee is a fully customized, open-source LinkTree alternative deployed directly on GitHub Pages.">
-          <i class="fa-brands fa-github"></i> linkyee <span class='link-button-text'>(86 Stars)</span>
+          <svg class="icon" aria-hidden="true"><use href="#icon-github"></use></svg> linkyee <span class='link-button-text'>(86 Stars)</span>
         </a>
       
     </div>
@@ -103,32 +130,32 @@
         
           
           <a href="https://blog.zhgchg.li" title="ZhgChgLi's Medium" target="_blank" class="icon-button" alt="ZhgChgLi's Medium">
-            <i class="fa-brands fa-medium"></i>
+            <svg class="icon" aria-hidden="true"><use href="#icon-medium"></use></svg>
           </a>
         
           
           <a href="https://github.com/ZhgChgLi" title="ZhgChgLi's GitHub" target="_blank" class="icon-button" alt="ZhgChgLi's GitHub">
-            <i class="fa-brands fa-github"></i>
+            <svg class="icon" aria-hidden="true"><use href="#icon-github"></use></svg>
           </a>
         
           
           <a href="https://twitter.com/zhgchgli" title="ZhgChgLi's Twitter" target="_blank" class="icon-button" alt="ZhgChgLi's Twitter">
-            <i class="fa-brands fa-twitter"></i>
+            <svg class="icon" aria-hidden="true"><use href="#icon-twitter"></use></svg>
           </a>
         
           
           <a href="https://www.linkedin.com/in/zhgchgli/" title="ZhgChgLi's LinkedIn" target="_blank" class="icon-button" alt="ZhgChgLi's LinkedIn">
-            <i class="fa-brands fa-linkedin"></i>
+            <svg class="icon" aria-hidden="true"><use href="#icon-linkedin"></use></svg>
           </a>
         
           
           <a href="https://www.instagram.com/zhgchgli/" title="Instagram" target="_blank" class="icon-button" alt="ZhgChgLi's Instagram">
-            <i class="fa-brands fa-instagram"></i>
+            <svg class="icon" aria-hidden="true"><use href="#icon-instagram"></use></svg>
           </a>
         
           
           <a href="mailto:zhgchgli@gmail.com" title="Email: zhgchgli@gmail.com" target="_blank" class="icon-button" alt="zhgchgli@gmail.com">
-            <i class="fa-solid fa-envelope"></i>
+            <svg class="icon" aria-hidden="true"><use href="#icon-envelope"></use></svg>
           </a>
         
       </div>

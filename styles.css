@@ -39,6 +39,15 @@ a {
   border: 2px solid black;
 }
 
+/* SVG icon styling */
+.icon {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  display: inline-block;
+  vertical-align: -0.125em;
+}
+
 .name {
   font-size: 28px;
   font-weight: bold;
@@ -108,8 +117,10 @@ a {
   color: black;
 }
 
-.icon-button i {
+.icon-button .icon {
   font-size: 24px;
+  width: 24px;
+  height: 24px;
 }
 
 .icon-button:hover {
